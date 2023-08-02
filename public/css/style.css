@@ -1,0 +1,85 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+}
+
+
+body {
+    background-color: rgb(201, 226, 247);
+}
+
+
+.main_container {
+    max-width: 800px;
+    height: fit-content;
+    margin: 0 auto;
+    background-color: aqua;
+}
+
+.main_heading {
+    font: 6rem;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-align: center;
+}
+
+.search_bar {
+    width: 50%;
+    margin: 2rem auto;
+    height: 2rem;
+    display: flex;
+    justify-content: center;
+}
+
+
+.song_container {
+    width: 70%;
+    height: fit-content;
+    padding: .8rem;
+    background-color: orange;
+    margin: 2rem auto;
+    text-align: center;
+}
+
+.button_container {
+    margin: 1rem auto;
+}
+
+.button_container button {
+    width: fit-content;
+    height: fit-content;
+    padding: .5rem 1rem;
+    border: none;
+
+}
+
+
+
+
+.song_details_container {
+    width: 100%;
+}
+
+.song_title {
+    margin: 0;
+    font-size: 1.2rem;
+}
+
+.song_author {
+    margin: .4rem;
+    font-size: .7rem;
+}
+
+.song_details {
+    margin: 0;
+    font-size: .8rem ;
+}
+
+.thumbnail_container {
+    width: 40%;
+    height: fit-content
+}   
