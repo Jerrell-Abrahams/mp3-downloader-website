@@ -5,37 +5,56 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MP3 Downloader</title>
     <link rel="stylesheet" href="../css/style.css">
+
+    <!--Fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed&family=League+Gothic&family=Rajdhani&display=swap" rel="stylesheet">
+
+    <script src="../javascript/index.js"></script>
 </head>
 <body>
     <section class="main_section">
         <div class="main_container">
-            <h1 class="main_heading">Mp3 Downloader</h1>
-            <input class="search_bar" type="search" name="song_name" id="" placeholder="Enter song name or author">
+            <img class="img" src="../images/icon.png" alt="">
+            <h1 class="main_heading">Mp3 Music Downloader</h1>
+            <div>
+                <form class="search_form" action="/" method="post">
+            <input class="search_bar" name="search" placeholder="Enter song name or author">
+            <button class="search_button" type="submit">Search</button>
+        </form>
+        </div>
+        <% for( let song = 0; song < videos.length; song++ ) { %>
+        
+        
+        <div class="song_container">
+            <div class="song_details_container">
+            <h5 class="song_title"><%= videos[song].title %></h5>
+            <h6 class="song_author"><%= videos[song].channelTitle %></h6>
 
-            <div class="song_container">
-                <div class="song_details_container">
-                <h5 class="song_title"><%= songDetails.videoDetails.title %></h5>
-                <h6 class="song_author"><%= (songDetails.videoDetails.ownerChannelName).replace("- Topic", "") %></h6>
-                <p class="song_details">9M views | 1 month ago</p>
-            </div>
-            <div class="button_container">
-                <button class="download_button">Download</button>
-                <button class="view_button">View More</button>
-            </div>
-            </div>
+        </div>
+        <div class="button_container">
+            <form action="/convert_mp3" method="post">
+            <a href="" name="videoID" type="submit" target="_blank" rel="noreferrer" value="<%= videos[song].id %>"><button type="submit" name="videoID" value="<%= videos[song].id %>" class="download_button">Download</button></a>
+            <button class="view_button">View More</button>
+        </form>
+        </div>
+        </div>
+        <% } %>
 
             <% for( let song = 0; song < songDetails.related_videos.length; song++) { %>
     
             <div class="song_container">
-
                 <div class="song_details_container">
                 <h5 class="song_title"><%= songDetails.related_videos[song].title %></h5>
                 <h6 class="song_author"><%= songDetails.related_videos[song].author.name %></h6>
                 <p class="song_details"><%= songDetails.related_videos[song].short_view_count_text %> views | <%= songDetails.related_videos[song].published %> | <%=  Math.floor(parseInt(songDetails.related_videos[song].length_seconds) / 60) %> minutes</p>
             </div>
             <div class="button_container">
-                <button class="download_button">Download</button>
+                <form action="/convert_mp3" method="post">
+                <a href="" target="_blank" rel="noreferrer"><button  type="submit" class="download_button" name="videoID" value="<%= songDetails.related_videos[song].id %>">Download</button></a>
                 <button class="view_button">View More</button>
+            </form>
             </div>
             </div>
             <% } %>

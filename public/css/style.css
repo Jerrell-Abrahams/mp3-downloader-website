@@ -10,29 +10,93 @@ html {
 
 
 body {
-    background-color: rgb(201, 226, 247);
+    background-color: #DDFFBB;
 }
 
 
 .main_container {
+    background-color: transparent;
     max-width: 800px;
     height: fit-content;
-    margin: 0 auto;
-    background-color: aqua;
+    margin: 10rem auto;
+    /* background-color: #DDFFBB; */
+}
+
+.img {
+    width: 300px;
+    height: 300px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    z-index: -1;
+    opacity: .1;
 }
 
 .main_heading {
-    font: 6rem;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 4rem;
+
     text-align: center;
+    color: #071952;
+    font-family: 'Rajdhani', sans-serif;
+
+}
+
+
+.search_form {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    margin: 3rem auto;
+    justify-content: center;
+    align-items: center;
+
 }
 
 .search_bar {
-    width: 50%;
-    margin: 2rem auto;
-    height: 2rem;
-    display: flex;
-    justify-content: center;
+    width: 70%;
+    padding: .5rem .7rem;
+    margin: 1rem auto;
+    height: 2.3rem;
+    border: none;
+    font-size: .9rem;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    transition: 1s all ease;
+    font-family: 'Barlow Condensed', sans-serif;
+}
+
+.search_bar:focus {
+    outline: none;
+    border-radius: 10px;
+    box-shadow: #00000074 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+    
+}
+
+.search_button{
+    width: fit-content;
+    height: fit-content;
+    padding: .5rem 3rem;
+    font-size: 1.1rem;
+    font-family: 'Barlow Condensed', sans-serif;
+    border: none;
+    border-radius: 2px;
+    background-color: #A4BC92;
+    color: white;
+    transition: .5s all ease;
+    outline: none;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+
+.search_button:hover {
+    background-color: #071952;
+    color: white;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    cursor: pointer;
+    transform: translateY(2px);
+    outline: none
+    
 }
 
 
@@ -40,25 +104,48 @@ body {
     width: 70%;
     height: fit-content;
     padding: .8rem;
-    background-color: orange;
+    background-color: #A4BC92;
     margin: 2rem auto;
     text-align: center;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 1px 2px 0px;
+
 }
 
 .button_container {
     margin: 1rem auto;
+    
+}
+
+.button_container form {
+    display: flex;
+    justify-content: center;
 }
 
 .button_container button {
     width: fit-content;
     height: fit-content;
-    padding: .5rem 1rem;
+    padding: .5rem 1.5rem;
     border: none;
-
+    border-radius: 2px;
+    margin: 0 1rem;
+    background-color: #C7E9B0;
+    transition: .5s ease all;
+    font-size: 1rem;
+    color: black;
+    font-family: 'Barlow Condensed', sans-serif;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
 }
 
+.button_container button:hover {
+    transform: translateY(1.5px);
+
+    background-color: #a3bd89;
+    color: black;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
 
 
+}
 
 .song_details_container {
     width: 100%;
@@ -67,19 +154,27 @@ body {
 .song_title {
     margin: 0;
     font-size: 1.2rem;
+    font-family: 'Rajdhani', sans-serif;
+    color: black
 }
 
 .song_author {
     margin: .4rem;
-    font-size: .7rem;
+    font-size: 1rem;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 200;
 }
 
 .song_details {
     margin: 0;
-    font-size: .8rem ;
+    font-size: .9rem;
+    font-family: 'Barlow Condensed', sans-serif;
 }
 
-.thumbnail_container {
-    width: 40%;
-    height: fit-content
-}   
+.about_container {
+    background-color: white;
+    position: fixed;
+    top: 90%;
+    text-align: center;
+
+}
