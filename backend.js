@@ -1,5 +1,6 @@
 const express = require('express')
 const app = express()
+const fs = require("fs")
 const ytdl = require('ytdl-core');
 var search = require('youtube-search');
 const bodyParser = require('body-parser');
@@ -22,6 +23,20 @@ app.use(express.static(__dirname + '/public'));
 
 app.get('/', async (req, res) => {
   res.render("index_without_ejs", {link: ""})
+})
+
+app.get("/about_project", (req, res) => {
+
+  fs.readFile("views/count.txt", "utf-8", (err, data) => {
+    if (err) {
+      console.log(err)
+    }
+    else {
+      res.render("about_project", {count: data})
+    }
+  })
+    
+  
 })
 
 app.post("/", async (req, res) => {
@@ -61,11 +76,25 @@ app.post('/convert_mp3', async (req, res) => {
   const fetchResponse = await fetchAPI.json()
 
   if (fetchResponse.status === "ok") {
-    
+    fs.readFile("views/count.txt", "utf-8", (err, data) => {
+      if (err) {
+        console.log(err)
+      }
+      else {
+        let retrievedNumber = parseInt(data)
+        retrievedNumber++ 
+        fs.writeFile("views/count.txt",
+        String(retrievedNumber), (err) => {
+          if (err) {
+            console.log(err)
+          }
+        })
+      }
+    })
     return res.redirect(fetchResponse.link)
   }
   else {
-    return res.redirect("/",)
+    return res.redirect("/")
   }
 })
 app.listen(port, "192.168.100.4", () => {

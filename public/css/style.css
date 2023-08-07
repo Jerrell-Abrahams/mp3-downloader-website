@@ -52,18 +52,6 @@ iframe {
     border-radius: 10px;
 }
 
-.modal_title_container {
-    width: 100%;
-    height: fit-content
-}
-
-.modal_title {
-    text-align: center;
-    font-size: 2rem;
-    color: black;
-    font-family: 'Times New Roman', Times, serif;
-}
-
 dialog::backdrop {
     background-color: rgba(0, 0, 0, 0.432);
 }
@@ -210,6 +198,13 @@ dialog::backdrop {
     text-align: center;
 }
 
+.song_count {
+    background-color: rgba(168, 98, 19, 0.764);
+    border: none;
+    border-radius: 30px;
+
+}
+
 .about_container h1 {
     font-family: 'Playfair Display', 'serif';
     font-size: 2.2rem;
@@ -227,7 +222,7 @@ dialog::backdrop {
 .contact_container button {
     width: fit-content;
     height: fit-content;
-    margin: 1rem 2rem;
+    margin: 1rem 1rem;
     padding: .7rem 2rem;
     border-radius: 4px;
 }
@@ -238,6 +233,21 @@ dialog::backdrop {
     font-size: 1rem;
     font-family: 'Barlow Condensed', sans-serif;
     transition: .5s all ease;
+}
+
+.about_button {
+    background-color: transparent;
+    border: 1px solid black;
+    font-size: 1rem;
+    font-family: 'Barlow Condensed', sans-serif;
+    transition: .5s all ease;
+}
+
+.about_button:hover {
+    transform: translateY(1px);
+    background-color: black;
+    color: white;
+    cursor: pointer;
 }
 
 .contact_me_button:hover {
@@ -285,6 +295,9 @@ dialog::backdrop {
     .song_container {
         width: 90%;
     }
+    .dialog {
+        width: 85%
+    }
  }
 
 @media all and (max-width: 310px) {
@@ -300,6 +313,9 @@ dialog::backdrop {
     }
     .song_container {
         width: 90%;
+    }
+    .dialog {
+        width: 85%
     }
  }
 
