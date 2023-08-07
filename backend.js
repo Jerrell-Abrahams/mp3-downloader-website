@@ -1,13 +1,9 @@
 const express = require('express')
 const app = express()
 const ytdl = require('ytdl-core');
-const fs = require("fs")
-const axios = require('axios');
-const https = require("https");
 var search = require('youtube-search');
 const bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({ extended: true }));
-
 
 
 var opts = {
@@ -16,14 +12,7 @@ var opts = {
 };
 
 
-
-
-
-
-
-
-
-const port = process.env.PORT || 3000
+const port = process.env.PORT || 3000;
 
 
 app.set('view engine', 'ejs');
@@ -49,12 +38,9 @@ app.post("/", async (req, res) => {
 
     const songInfo = await ytdl.getInfo(videoLink)
 
+
     res.render("index", {songDetails: songInfo, videos: searched_videos})
   });
-
-
-
-
 
 })
 
@@ -79,9 +65,9 @@ app.post('/convert_mp3', async (req, res) => {
     return res.redirect(fetchResponse.link)
   }
   else {
-    return res.redirect("/")
+    return res.redirect("/",)
   }
 })
-app.listen(port, () => {
+app.listen(port, "192.168.100.4", () => {
   console.log(`Example app listening on port ${port}`)
 })

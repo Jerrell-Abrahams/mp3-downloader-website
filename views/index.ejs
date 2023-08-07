@@ -3,15 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MP3 Downloader</title>
+    <title>MP3 Music Downloader</title>
     <link rel="stylesheet" href="../css/style.css">
 
     <!--Fonts-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed&family=League+Gothic&family=Rajdhani&display=swap" rel="stylesheet">
-
-    <script src="../javascript/index.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed&family=League+Gothic&family=Playfair+Display:ital@1&family=Rajdhani&display=swap" rel="stylesheet">
+    <script defer src="../javascript/index.js"></script>
 </head>
 <body>
     <section class="main_section">
@@ -24,22 +23,33 @@
             <button class="search_button" type="submit">Search</button>
         </form>
         </div>
+
+
+
+
+         
+        
         <% for( let song = 0; song < videos.length; song++ ) { %>
         
         
         <div class="song_container">
             <div class="song_details_container">
             <h5 class="song_title"><%= videos[song].title %></h5>
-            <h6 class="song_author"><%= videos[song].channelTitle %></h6>
+            <h6 class="song_author">- <%= videos[song].channelTitle %></h6>
 
         </div>
         <div class="button_container">
             <form action="/convert_mp3" method="post">
-            <a href="" name="videoID" type="submit" target="_blank" rel="noreferrer" value="<%= videos[song].id %>"><button type="submit" name="videoID" value="<%= videos[song].id %>" class="download_button">Download</button></a>
-            <button class="view_button">View More</button>
+            <a href="" name="videoID" type="submit" target="_blank" value="<%= videos[song].id %>"><button type="submit" name="videoID" value="<%= videos[song].id %>" class="download_button">Download</button></a>
+            <button data-open-modal type="button" class="playButton" value="<%= videos[song].id %>">Play</button>
         </form>
+        
         </div>
         </div>
+
+        <dialog data-modal class="<%= videos[song].id %>">
+            <iframe width="1231" height="702" src="https://www.youtube.com/embed/f74GYIVMk3I" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>    
+        </dialog>
         <% } %>
 
             <% for( let song = 0; song < songDetails.related_videos.length; song++) { %>
@@ -47,17 +57,34 @@
             <div class="song_container">
                 <div class="song_details_container">
                 <h5 class="song_title"><%= songDetails.related_videos[song].title %></h5>
-                <h6 class="song_author"><%= songDetails.related_videos[song].author.name %></h6>
+                <h6 class="song_author">- <%= songDetails.related_videos[song].author.name %></h6>
                 <p class="song_details"><%= songDetails.related_videos[song].short_view_count_text %> views | <%= songDetails.related_videos[song].published %> | <%=  Math.floor(parseInt(songDetails.related_videos[song].length_seconds) / 60) %> minutes</p>
             </div>
             <div class="button_container">
                 <form action="/convert_mp3" method="post">
-                <a href="" target="_blank" rel="noreferrer"><button  type="submit" class="download_button" name="videoID" value="<%= songDetails.related_videos[song].id %>">Download</button></a>
-                <button class="view_button">View More</button>
+                <a href="" target="_blank"><button  type="submit" class="download_button" name="videoID" value="<%= songDetails.related_videos[song].id %>">Download</button></a>
+                <button data-open-modal class="playButton" type="button" value="<%= songDetails.related_videos[song].id %>">Play</button>
             </form>
             </div>
             </div>
+
+            <dialog data-modal class="<%= songDetails.related_videos[song].id %>">
+                <iframe src="https://www.youtube.com/embed/<%= songDetails.related_videos[song].id %>" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+            </dialog>
+
             <% } %>
+
+        </div>
+    </section>
+    <section class="about">
+        <div class="about_container">
+            <h1>About project</h1>
+            <p><strong>MP3 Music Downloader</strong> operates as a music search engine, indexing and providing links to music files available on the internet. However, it's essential to understand that the legality of downloading copyrighted music for free without proper authorization from the copyright owner is questionable. While this website itself may not host copyrighted content, the sources it provides links to might not always be legal. Therefore, it's essential for users to exercise caution and respect copyright laws while using the platform.</p>
+            <div class="contact_container">
+                <a href="mailto:jerrellabrahams50@gmail.com"><button class="contact_me_button">Contact me</button></a>
+                <a href="http://jerrell-abrahams.tech/" target="_blank"><button class="view_button">View my website</button></a>
+            </div>
         </div>
     </section>
 </body>
