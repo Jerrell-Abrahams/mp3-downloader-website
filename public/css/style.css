@@ -35,8 +35,8 @@ body {
 }
 
 dialog {
-    width: 60%;
-    height: 50%;
+    width: 80%;
+    height: 60%;
     margin: auto;
     border: none;
     border-radius: 10px;
@@ -279,6 +279,19 @@ dialog::backdrop {
     html {
         font-size: 14px;
     }
+    .contact_container {
+        display: flex;
+        justify-content: center;
+    }
+    .search_bar {
+        width: 90%
+    }
+    .song_container {
+        width: 90%;
+    }
+    .dialog {
+        width: 95%
+    }
  }
 
 @media all and (max-width: 480px) {
@@ -296,7 +309,7 @@ dialog::backdrop {
         width: 90%;
     }
     .dialog {
-        width: 85%
+        width: 95%
     }
  }
 
@@ -315,7 +328,7 @@ dialog::backdrop {
         width: 90%;
     }
     .dialog {
-        width: 85%
+        width: 95%;
     }
  }
 
