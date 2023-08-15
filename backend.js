@@ -78,6 +78,7 @@ app.post('/convert_mp3', async (req, res) => {
   const fetchResponse = await fetchAPI.json()
 
   if (fetchResponse.status === "ok") {
+    console.log(fetchResponse)
     fs.readFile("views/count.txt", "utf-8", (err, data) => {
       if (err) {
         console.log(err)

@@ -41,7 +41,7 @@
         </div>
         <div class="button_container">
             <form action="/convert_mp3" method="post">
-            <a name="videoID" type="submit" target="_blank" value="<%= videos[song].id %>"><button type="submit" name="videoID" value="<%= videos[song].id %>" class="download_button">Download</button></a>
+            <button type="submit" name="videoID" value="<%= videos[song].id %>" class="download_button">Download</button>
             <button data-open-modal type="button" class="playButton" value="<%= videos[song].id %>">Play</button>
         </form>
         
@@ -63,7 +63,7 @@
             </div>
             <div class="button_container">
                 <form action="/convert_mp3" method="post">
-                <a target="_blank"><button  type="submit" class="download_button" name="videoID" value="<%= songDetails.related_videos[song].id %>">Download</button></a>
+                <button  type="submit" class="download_button" name="videoID" value="<%= songDetails.related_videos[song].id %>">Download</button>
                 <button data-open-modal class="playButton" type="button" value="<%= songDetails.related_videos[song].id %>">Play</button>
             </form>
             </div>
