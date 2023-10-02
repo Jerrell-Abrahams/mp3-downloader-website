@@ -17,6 +17,7 @@
     <script defer src="../javascript/index.js"></script>
   </head>
   <body>
+    <a href="#about"><button class="toBottom">👇</button></a>
     <section class="main_section">
       <div class="main_container">
         <img class="img" src="../images/icon.png" alt="" />
@@ -35,6 +36,9 @@
         <% for( let song = 0; song < videos.length; song++ ) { %>
 
         <div class="song_container">
+          <div class="img_container">
+            <img src="<%= videos[song].thumbnails.medium.url %>" alt="" />
+          </div>
           <div class="song_details_container">
             <h5 class="song_title"><%= videos[song].title %></h5>
             <h6 class="song_author">- <%= videos[song].channelTitle %></h6>
@@ -76,6 +80,12 @@
         song++) { %>
 
         <div class="song_container">
+          <div class="img_container">
+            <img
+              src="<%= songDetails.related_videos[song].thumbnails[1].url %>"
+              alt=""
+            />
+          </div>
           <div class="song_details_container">
             <h5 class="song_title">
               <%= songDetails.related_videos[song].title %>
@@ -124,7 +134,7 @@
         <% } %>
       </div>
     </section>
-    <section class="about">
+    <section class="about" id="about">
       <div class="about_container">
         <h1>About project</h1>
 
@@ -145,7 +155,7 @@
           <a href="/about_project"
             ><button class="about_button">About Project</button></a
           >
-          <a href="http://jerrell-abrahams.tech/" target="_blank"
+          <a href="https://jerrellabrahams.tech/" target="_blank"
             ><button class="view_button">View my website</button></a
           >
           <a href="https://www.buymeacoffee.com/jerrellabrahams" target="_blank"

@@ -39,7 +39,6 @@ app.post("/", async (req, res) => {
   search(videoId, opts, async function (err, results) {
     if (err) return console.log(err);
 
-    console.log(results);
     let videoLink = results[0].link;
     const searched_videos = results;
 

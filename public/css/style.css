@@ -6,12 +6,28 @@
 
 html {
   font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+:root {
+  --primary_color: #222831;
+  --secondary_color: #393e46;
+  --primary_accent: #00adb5;
+  --secondary_accent: #eeeeee;
 }
 
 body {
-  background-color: #ddffbb;
+  background-color: var(--primary_color);
 }
 
+.toBottom {
+  position: sticky;
+  top: 90%;
+  left: 95%;
+  background-color: transparent;
+  border: none;
+  font-size: 2rem;
+}
 .main_container {
   background-color: transparent;
   max-width: 800px;
@@ -28,21 +44,22 @@ body {
   right: 0;
   margin: auto;
   z-index: -1;
-  opacity: 0.2;
+  opacity: 0.4;
 }
 
 dialog {
-  width: 80%;
-  height: 80%;
+  width: 90%;
+  height: 97%;
   margin: auto;
   border: none;
   border-radius: 10px;
-  background-color: #ddffbb;
+  background-color: var(--primary_color);
 }
 dialog h1 {
   text-align: center;
   font-size: 1.5rem;
   font-family: "Barlow Condensed", sans-serif;
+  color: white;
 }
 
 iframe {
@@ -62,7 +79,10 @@ dialog::backdrop {
 .main_heading {
   font-size: 4rem;
   text-align: center;
-  color: #071952;
+  background: #2796d6;
+  background: linear-gradient(to right, #2796d6 20%, #2646ad 75%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
   font-family: "Rajdhani", sans-serif;
 }
 
@@ -106,7 +126,8 @@ dialog::backdrop {
   font-family: "Barlow Condensed", sans-serif;
   border: none;
   border-radius: 2px;
-  background-color: #a4bc92;
+  background: #00adb5;
+  background: linear-gradient(to right, #2796d6 20%, #2646ad 75%);
   color: white;
   transition: 0.5s all ease;
   outline: none;
@@ -114,7 +135,8 @@ dialog::backdrop {
 }
 
 .search_button:hover {
-  background-color: #071952;
+  background: #00adb5;
+  background: linear-gradient(to right, #145e89 20%, #152a6f 75%);
   color: white;
   box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
   cursor: pointer;
@@ -123,16 +145,33 @@ dialog::backdrop {
 }
 
 .song_container {
-  width: 70%;
+  width: 90%;
   height: fit-content;
-  padding: 0.8rem;
-  background-color: #8ea47e;
+  padding: 1rem;
+  background-color: var(--secondary_color);
   margin: 2rem auto;
   text-align: center;
-  border-radius: 10px;
+  border-radius: 5px;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  color: var(--secondary_accent);
+}
+.img_container {
+  width: 100%;
+  height: 8rem;
+  display: flex;
+  justify-content: center;
 }
 
+.img_container img {
+  width: 10rem;
+  height: 8rem;
+  border-radius: 50%;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+
+  background-color: #cccccc;
+
+  object-fit: cover;
+}
 .button_container {
   margin: 1rem auto;
 }
@@ -146,13 +185,13 @@ dialog::backdrop {
   width: fit-content;
   height: fit-content;
   padding: 0.5rem 1.5rem;
-  border: none;
+  border: 1px solid var(--primary_accent);
   border-radius: 2px;
   margin: 0 1rem;
-  background-color: #c7e9b0;
+  background-color: transparent;
   transition: 0.5s ease all;
   font-size: 1rem;
-  color: black;
+  color: var(--secondary_accent);
   font-family: "Barlow Condensed", sans-serif;
   box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
     rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
@@ -160,9 +199,11 @@ dialog::backdrop {
 
 .button_container button:hover {
   transform: translateY(1.5px);
-
-  background-color: #a3bd89;
-  color: black;
+  background: #00adb5;
+  background: linear-gradient(to right, #2796d6 20%, #2646ad 75%);
+  color: white;
+  border: 1px solid transparent;
+  cursor: pointer;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px,
     rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
 }
@@ -172,10 +213,10 @@ dialog::backdrop {
 }
 
 .song_title {
-  margin: 0;
+  margin: 0.5rem 0;
   font-size: 1.2rem;
   font-family: "Rajdhani", sans-serif;
-  color: black;
+  color: var(--secondary_accent);
 }
 
 .song_author {
@@ -194,7 +235,7 @@ dialog::backdrop {
 .about_container {
   max-width: 800px;
   height: fit-content;
-  background-color: #ddffbb;
+  background-color: var(--primary_color);
   margin: 0 auto;
   text-align: center;
 }
@@ -208,7 +249,10 @@ dialog::backdrop {
 .about_container h1 {
   font-family: "Playfair Display", "serif";
   font-size: 2.2rem;
-  color: #071952;
+  background: #2796d6;
+  background: linear-gradient(to right, #2796d6 20%, #2646ad 75%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .about_container p {
@@ -217,6 +261,7 @@ dialog::backdrop {
   font-size: 1rem;
   line-height: 2rem;
   font-family: "Barlow Condensed", sans-serif;
+  color: white;
 }
 
 .contact_container button {
@@ -225,11 +270,13 @@ dialog::backdrop {
   margin: 1rem 1rem;
   padding: 0.7rem 2rem;
   border-radius: 4px;
+  border: 1px solid var(--primary_accent);
+  color: white;
 }
 
 .contact_me_button {
   background-color: transparent;
-  border: 1px solid black;
+
   font-size: 1rem;
   font-family: "Barlow Condensed", sans-serif;
   transition: 0.5s all ease;
@@ -237,7 +284,7 @@ dialog::backdrop {
 
 .about_button {
   background-color: transparent;
-  border: 1px solid black;
+  border: 1px solid var(--primary_accent);
   font-size: 1rem;
   font-family: "Barlow Condensed", sans-serif;
   transition: 0.5s all ease;
