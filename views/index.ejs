@@ -13,14 +13,14 @@
     <link rel="stylesheet" href="../css/style.css" />
 
     <!--Fonts-->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <!-- <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Barlow+Condensed&family=League+Gothic&family=Playfair+Display:ital@1&family=Rajdhani&display=swap"
       rel="stylesheet"
-    />
+    /> -->
 
-    <script defer src="../javascript/index.js"></script>
+    <script async src="../javascript/index.js"></script>
   </head>
   <body>
     <a href="#about"><button class="toBottom">👇</button></a>
@@ -97,6 +97,7 @@
             <img
               src="<%= songDetails.related_videos[song].thumbnails[1].url %>"
               alt="Image of <%= songDetails.related_videos[song].title %> song"
+              loading="lazy"
             />
           </div>
           <div class="song_details_container">
