@@ -163,9 +163,8 @@ dialog::backdrop {
 }
 
 .img_container img {
-  width: 10rem;
   height: 8rem;
-  border-radius: 50%;
+
   box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
 
   background-color: #cccccc;
@@ -276,15 +275,6 @@ dialog::backdrop {
 
 .contact_me_button {
   background-color: transparent;
-
-  font-size: 1rem;
-  font-family: "Barlow Condensed", sans-serif;
-  transition: 0.5s all ease;
-}
-
-.about_button {
-  background-color: transparent;
-  border: 1px solid var(--primary_accent);
   font-size: 1rem;
   font-family: "Barlow Condensed", sans-serif;
   transition: 0.5s all ease;
@@ -307,7 +297,7 @@ dialog::backdrop {
 .view_button {
   background-color: transparent;
   border: 1px solid black;
-  font-size: 1rem;
+  font-size: 0.7rem;
   font-family: "Barlow Condensed", sans-serif;
   transition: 0.5s all ease;
 }
@@ -330,6 +320,7 @@ dialog::backdrop {
     display: flex;
     justify-content: center;
   }
+
   .search_bar {
     width: 90%;
   }

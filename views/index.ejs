@@ -3,7 +3,12 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>MP3 Music Downloader</title>
+    <meta
+      name="description"
+      content="List of the songs retrieved from the Youtube API"
+    />
+
+    <title>MP3 Music Downloader | Results</title>
     <link rel="icon" href="https://www.flaticon.com/free-icons/music" />
     <link rel="stylesheet" href="../css/style.css" />
 
@@ -14,15 +19,18 @@
       href="https://fonts.googleapis.com/css2?family=Barlow+Condensed&family=League+Gothic&family=Playfair+Display:ital@1&family=Rajdhani&display=swap"
       rel="stylesheet"
     />
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1199609580141306"
-     crossorigin="anonymous"></script>
+
     <script defer src="../javascript/index.js"></script>
   </head>
   <body>
     <a href="#about"><button class="toBottom">👇</button></a>
     <section class="main_section">
       <div class="main_container">
-        <img class="img" src="../images/icon.png" alt="" />
+        <img
+          class="img"
+          src="../images/icon.webp"
+          alt="Music note icon, used for background"
+        />
         <h1 class="main_heading">Mp3 Music Downloader</h1>
         <div>
           <form class="search_form" action="/" method="post">
@@ -39,7 +47,10 @@
 
         <div class="song_container">
           <div class="img_container">
-            <img src="<%= videos[song].thumbnails.medium.url %>" alt="" />
+            <img
+              src="<%= videos[song].thumbnails.medium.url %>"
+              alt="Image of <%= videos[song].title %> song"
+            />
           </div>
           <div class="song_details_container">
             <h5 class="song_title"><%= videos[song].title %></h5>
@@ -85,7 +96,7 @@
           <div class="img_container">
             <img
               src="<%= songDetails.related_videos[song].thumbnails[1].url %>"
-              alt=""
+              alt="Image of <%= songDetails.related_videos[song].title %> song"
             />
           </div>
           <div class="song_details_container">
@@ -151,11 +162,8 @@
           exercise caution and respect copyright laws while using the platform.
         </p>
         <div class="contact_container">
-          <a href="mailto:jerrellabrahams50@gmail.com"
-            ><button class="contact_me_button">Contact me</button></a
-          >
           <a href="/about_project"
-            ><button class="about_button">About Project</button></a
+            ><button class="view_button">About Project</button></a
           >
           <a href="https://jerrellabrahams.tech/" target="_blank"
             ><button class="view_button">View my website</button></a
